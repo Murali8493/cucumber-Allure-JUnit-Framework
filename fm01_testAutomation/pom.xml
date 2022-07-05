@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>fm01_testAutomation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <threadCount>10</threadCount>
+            <initialDelay>10</initialDelay>
+            <startupTime>10</startupTime>
+            <loadHoldTime>600</loadHoldTime>
+            <shutdownTime>10</shutdownTime>
+            <jMeterTestFile>IRBO_Maintain_orderableItems_AdminMDO_Assertions.jmx</jMeterTestFile>
+            <aspectj.version>1.9.6</aspectj.version>
+        </properties>
+
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>org.seleniumhq.selenium</groupId>-->
+<!--                <artifactId>selenium-java</artifactId>-->
+<!--                <version>3.11.0</version>-->
+<!--                <scope>test</scope>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.seleniumhq.selenium</groupId>-->
+<!--                <artifactId>selenium-java</artifactId>-->
+<!--                <version>4.0.0-alpha-5</version>-->
+<!--            </dependency>-->
+            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>3.141.59</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>gherkin</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>6.8.1</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-jvm</artifactId>
+                <version>6.8.1</version>
+                <type>pom</type>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>6.8.1</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.json/json -->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20210307</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.skyscreamer/jsonassert -->
+            <dependency>
+                <groupId>org.skyscreamer</groupId>
+                <artifactId>jsonassert</artifactId>
+                <version>1.5.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>5.0.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>5.0.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber6-jvm -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-cucumber6-jvm</artifactId>
+                <version>2.13.10</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.17</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>4.4.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>json-path</artifactId>
+                <version>4.4.0</version>
+                <scope>test</scope>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.12.3</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.ibm.db2/jcc -->
+            <dependency>
+                <groupId>com.ibm.db2</groupId>
+                <artifactId>jcc</artifactId>
+                <version>11.5.6.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chromium-driver -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chromium-driver</artifactId>
+                <version>4.0.0-alpha-3</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>webdrivermanager</artifactId>
+                <version>4.4.3</version>
+            </dependency>
+
+
+
+        </dependencies>
+
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                    <configuration>
+                        <includes>
+                            <include>CucumberTest.java</include>
+                        </includes>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <argLine>
+                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        </argLine>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjweaver</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+<!--                <plugin>-->
+<!--                    <groupId>com.lazerycode.jmeter</groupId>-->
+<!--                    <artifactId>jmeter-maven-plugin</artifactId>-->
+<!--                    <version>3.4.0</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>configuration</id>-->
+<!--                            <goals>-->
+<!--                                <goal>configure</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                        <execution>-->
+<!--                            <id>jmeter-tests</id>-->
+<!--                            <phase>verify</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>jmeter</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                        <execution>-->
+<!--                            <id>jmeter-check-results</id>-->
+<!--                            <goals>-->
+<!--                                <goal>results</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                    <configuration>-->
+<!--                        <jMeterProcessJVMSettings>-->
+<!--&lt;!&ndash;                            <xms>1024</xms>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <xmx>1024</xmx>&ndash;&gt;-->
+<!--                            <xms>3584</xms>-->
+<!--                            <xmx>3584</xmx>-->
+<!--&lt;!&ndash;                            <arguments>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <argument>-XX:MaxMetaspaceSize=768m</argument>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </arguments>&ndash;&gt;-->
+<!--                            <arguments>-->
+<!--                                <argument>-Xprof</argument>-->
+<!--                                <argument>-Xfuture</argument>-->
+<!--                                <argument>-XX:MaxMetaspaceSize=768m</argument>-->
+<!--                            </arguments>-->
+<!--                        </jMeterProcessJVMSettings>-->
+<!--                        <jmeterExtensions>-->
+<!--                            <artifact>kg.apc:jmeter-plugins-casutg:2.6</artifact>-->
+<!--                        </jmeterExtensions>-->
+<!--                        <excludedArtifacts>-->
+<!--                            <exclusion>org.slf4j:slf4j-nop</exclusion>-->
+<!--                            <exclusion>avalon-framework:*</exclusion>-->
+<!--                            <exclusion>org.apache.tika:*</exclusion>-->
+<!--                            <exclusion>excalibur-datasource:excalibur-datasource</exclusion>-->
+<!--                            <exclusion>excalibur-instrument:excalibur-instrument</exclusion>-->
+<!--                            <exclusion>excalibur-logger:excalibur-logger</exclusion>-->
+<!--                            <exclusion>excalibur-pool:*</exclusion>-->
+<!--                            <exclusion>org.beanshell:bsh:jar:2.0b5</exclusion>-->
+<!--                        </excludedArtifacts>-->
+<!--                        <propertiesUser>-->
+<!--                            <threadCount>${threadCount}</threadCount>-->
+<!--                            <initialDelay>${initialDelay}</initialDelay>-->
+<!--                            <startupTime>${startupTime}</startupTime>-->
+<!--                            <loadHoldTime>${loadHoldTime}</loadHoldTime>-->
+<!--                            <shutdownTime>${shutdownTime}</shutdownTime>-->
+<!--&lt;!&ndash;                            <jmeter.save.saveservice.output_format>xml</jmeter.save.saveservice.output_format>&ndash;&gt;-->
+<!--                        </propertiesUser>-->
+<!--                        <testFilesIncluded>-->
+<!--                            <jMeterTestFile>${jMeterTestFile}</jMeterTestFile>-->
+<!--                        </testFilesIncluded>-->
+<!--&lt;!&ndash;                        <testFilesExcluded>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <excludeJMeterTestFile>test3.jmx</excludeJMeterTestFile>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <excludeJMeterTestFile>test4.jmx</excludeJMeterTestFile>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </testFilesExcluded>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <jmeterVersion>5.1</jmeterVersion>&ndash;&gt;-->
+<!--                        <generateReports>true</generateReports>-->
+<!--                        <resultsFileFormat>xml</resultsFileFormat>-->
+<!--&lt;!&ndash;                        <ignoreResultFailures>true</ignoreResultFailures>&ndash;&gt;-->
+<!--                        <testResultsTimestamp>false</testResultsTimestamp>-->
+<!--                        <suppressJMeterOutput>false</suppressJMeterOutput>-->
+<!--                        <ignoreResultFailures>false</ignoreResultFailures>-->
+<!--                        <overrideRootLogLevel>DEBUG</overrideRootLogLevel>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
+                <plugin>
+                    <groupId>de.codecentric</groupId>
+                    <artifactId>jmeter-graph-maven-plugin</artifactId>
+                    <version>0.1.0</version>
+                    <configuration>
+                        <inputFile>${project.build.directory}/jmeter/results/IRBO.jtl</inputFile>
+                        <graphs>
+                            <graph>
+                                <pluginType>ResponseTimesOverTime</pluginType>
+                                <width>800</width>
+                                <height>600</height>
+                                <outputFile>${project.build.directory}/jmeter/results/IRBO.png</outputFile>
+                            </graph>
+                        </graphs>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.10.0</version>
+                    <configuration>
+                        <reportVersion>2.7.0</reportVersion>
+                        <allureDownloadUrl>https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip</allureDownloadUrl>
+                        <reportDirectory>allure-report</reportDirectory>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <executions>
+                        <execution>
+                            <id>copy-allure-environment</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${basedir}/target/allure-results</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>src/test/resources</directory>
+                                        <includes>
+                                            <include>environment.properties</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+            </plugins>
+        </build>
+
+</project>

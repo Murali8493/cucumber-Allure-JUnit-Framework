@@ -1,0 +1,13 @@
+{
+  "CompetitorName": "Testing002",
+  "Classification": "AB",
+  "Address": "texas",
+  "CrossStreets": "street1",
+  "City": "City1",
+  "StateProvince": "California-CA",
+  "ZipCode": "50001",
+  "Notes": "Hello",
+  "Distance": "2",
+  "Direction": "NW",
+  "Limit": "2"
+}

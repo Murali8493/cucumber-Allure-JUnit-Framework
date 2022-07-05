@@ -1,0 +1,17 @@
+{
+  "StategasTaxRate": "1",
+  "StategasMiscTaxRate": "2",
+  "StategasPrepaidgasTax": "8",
+  "StategasGstTax": "4",
+  "StategasMisctax": "3",
+  "StatedieselTaxRate": "2",
+  "stateDieselMiscTaxRate": "1",
+  "StateDieselPrepaidgstTax": "2",
+  "StateDieselgstTax": "3",
+  "statedieselMisctax": "6",
+  "stateUnleade": "4",
+  "statePremium": "3",
+  "stateMidgrade": "2"
+
+
+}
